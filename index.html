@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="template/all_snacks.js"></script>
+    <script src="render/all_snacks.js"></script>
+    <script src="requests.js"></script>
+    <script src="main.js"></script>
     <meta charset="utf-8">
-    <title></title>
+    <title>Grumble Snack App</title>
   </head>
   <body>
-
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+              <h1 class="title">
+                Grumble
+              </h1>
+              <h2 class="subtitle">
+                Rate Galvanize snacks
+              </h2>
+            </div>
+            <div class="column is-right">
+              <a href="#" class="button is-pulled-right is-outlined is-primary is-inverted" id="login">Sign up/Login/User Name</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="columns is-multiline" id="main-container">
+          <!-- snacks go in here -->
+        </div>
+      </div>
+    </section>
+    <section class="modal" id="popup">
+      <!-- individual pop up views go in here -->
+    </section>
   </body>
 </html>
