@@ -3,7 +3,7 @@ window.RequestSnacks = {
   all(){
     return axios.get(`${url}/snacks`)
   },
-  one(){
-    return axios.get(`${url}/snacks/:id`)
+  one(id){
+    return axios.get(`${url}/snacks/${id}`)
   }
 }
