@@ -1,5 +1,6 @@
 function singleSnackTemplate(item){
 return `
+  <div class="modal is-active">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
@@ -20,8 +21,9 @@ return `
         <!-- reviews go here -->
       </section>
       <footer class="modal-card-foot">
-        <button class="delete" aria-label="close"></button>
+        <button class="delete" id="close-modal" aria-label="close"></button>
       </footer>
     </div>
+  </div>
 `
 }
