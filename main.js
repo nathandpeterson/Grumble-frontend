@@ -1,4 +1,8 @@
-renderSnacks()
+document.addEventListener('DOMContentLoaded', () => {
+  renderSnacks()
+  activateLoginButton()
+})
+
 
 
 

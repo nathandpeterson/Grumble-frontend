@@ -7,3 +7,9 @@ window.RequestSnacks = {
     return axios.get(`${url}/snacks/${id}`)
   }
 }
+
+window.Auth = {
+  login(data){
+    return axios.post(`${url}/auth/login`, data)
+  }
+}
