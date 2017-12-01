@@ -13,14 +13,17 @@ window.Auth = {
   login(data){
     return axios.post(`${authURL}/auth/login`, data)
       .then(newToken => {
-        this.setToken(newToken.data.message)
+        this.setToken(newToken.data.token)
       })
       .catch(err => console.log(err))
   },
   setToken(token){
-    localStorage.setItem('token', token)
+    localStorage.setItem('token', token.token)
+    localStorage.setItem('userId', token.userInfo.id)
+    localStorage.setItem('userName', token.userInfo.firstname)
+    localStorage.setItem('admin', token.userInfo.admin)
   },
   getToken(){
-    return localStorage.getItem(token)
+    return localStorage.getItem('token')
   }
 }
