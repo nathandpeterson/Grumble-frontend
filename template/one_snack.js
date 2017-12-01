@@ -1,4 +1,4 @@
-function singleSnackTemplate(item){
+function singleSnackTemplate(item, array){
 return `
   <div class="modal is-active">
     <div class="modal-background"></div>
@@ -18,12 +18,36 @@ return `
             ${item.description}
           </div>
         </div>
-        <!-- reviews go here -->
+        <div class="reviews">${addReviews(array)}</div>
       </section>
       <footer class="modal-card-foot">
         <button class="delete" id="close-modal" aria-label="close"></button>
       </footer>
     </div>
+  </div>
+`
+}
+
+function addReviews(array){
+  const content = array.map(el => oneReview(el))
+  return content.join(" ")
+}
+
+function oneReview(item){
+return `
+  <div class="box">
+    <article class="media">
+      <div class="media-content" id="${item.user_id}">
+        <strong class='is-pulled-right'>Rating: ${item.rating}</strong>
+        <p>
+        <h3 class="title is-4">${item.title}</h3>
+        <small>${item.text}</small>
+        </p>
+        <p class='is-pulled-right'>
+        <small><strong>by: ${item.first_name} ${item.last_name}</strong></small>
+        </p>
+      </div>
+    </article>
   </div>
 `
 }
