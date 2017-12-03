@@ -8,7 +8,6 @@ function renderSnacks() {
     .catch(error => console.error("Can't render snacks"))
 }
 
-
 function readMore(){
   document.querySelectorAll('.more').forEach(element => {
     element.addEventListener('click', (event) => {

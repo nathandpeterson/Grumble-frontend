@@ -1,8 +1,10 @@
 function renderOneSnack(id) {
-  return RequestSnacks.one(id)
+  return RequestSnacks.oneWithReviews(id)
     .then(response => {
-      console.log(response.data)
-      document.querySelector("#popup").innerHTML = singleSnackTemplate(response.data)
+      const snack = response[0].data
+      const reviewsArray = response[1].data
+      const content = singleSnackTemplate(snack, reviewsArray)
+      document.querySelector("#popup").innerHTML = content
       document.querySelector('#close-modal').addEventListener('click', () => {
         document.querySelector('.modal').classList.remove('is-active')
       })
