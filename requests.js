@@ -5,6 +5,9 @@ window.RequestSnacks = {
   },
   one(id){
     return axios.get(`${url}/snacks/${id}`)
+  },
+  oneWithReviews(id){
+    return axios.all([axios.get(`${url}/snacks/${id}`), axios.get(`${url}/snacks/${id}/reviews`)])
   }
 }
 
