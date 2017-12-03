@@ -13,7 +13,7 @@ return `
         </header>
         <div class="card-content">
           <div class="content">
-            ${item.price}
+            $${item.price}
           </div>
         </div>
         <footer class="card-footer">
