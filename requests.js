@@ -29,5 +29,17 @@ window.Auth = {
   getToken(){
     return localStorage.getItem('token')
   }
+}
 
+window.Admin = {
+  postSnack(data){
+    console.log(data)
+    return axios.post(`${url}/snacks`, data )
+    .then(message=>{
+      return alert(`added Snack:${data.name}`)
+    })
+  },
+  delSnack(data){
+
+  }
 }

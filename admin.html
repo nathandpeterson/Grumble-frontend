@@ -8,9 +8,13 @@
       <script src="template/all_snacks.js"></script>
       <script src="render/all_snacks.js"></script>
       <script src="template/one_snack.js"></script>
+      <script src="template/adminAddSnackWindow.js"></script>
       <script src="render/one_snack.js"></script>
       <script src="requests.js"></script>
       <script src="main.js" defer></script>
+      <script defer src="admin.js">
+
+      </script>
     <title>Admin Grumble</title>
   </head>
   <body>
@@ -32,34 +36,36 @@
           </div>
           <div class="columns">
             <div class="column">
-              <a class="button is-success" id="addSnack">Add Snack</a>
-              <a class="button is-danger" id="delSnack">Delete Snack</a>
+              <a class="button is-success" id="addSnackButton">Add Snack</a>
             </div>
           </div>
         </div>
       </div>
     </section>
     <section id="popup">
-
-      <div class="modal is-active">
+<!--
+      <div class="modal is-active" id="addSnackWindow">
         <div class="modal-background"></div>
         <div class="modal-card">
           <header class="modal-card-head">
-            <h1 class="modal-card-title">Remove Snack</h1>
-            <button class="button is-warning is-pulled left">Delete Snack
+            <h1 class="modal-card-title">Add New Snack</h1>
+            <button class="button is-success is-pulled left" id="addSnackPost">Add Snack
             </button>
           </header>
           <section class="modal-card-body">
             <div class="control">
-              <p><b>Select Snack to Delete</b></p>
-              <div class="select is-warning">
+              <form class="addSnack" action="" method="post">
+                Snack Name:<br>
+                <input type="text" name="name" placeholder="Snack Name">
+                <br>
+                Description:<br>
+                <textarea name="description" rows="8" cols="60" placeholder=""></textarea><br>
+                Price:<br>
+                <input type="number" name="price" value="" step="0.25"><br>
+                Sorce of img:<br>
+                <input type="text" name="img" value="">
 
-                <select>
-                  <option>Select Snack</option>
-                  <option>snack1</option>
-                  <option>snack2</option>
-                </select>
-              </div>
+              </form>
             </div>
             <div class="">
 
@@ -71,7 +77,7 @@
             <button class="delete" id="close-modal" aria-label="close"></button>
           </footer>
         </div>
-      </div>
+      </div> -->
 
       <!-- individual pop up views go in here -->
     </section>
