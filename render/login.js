@@ -4,6 +4,7 @@ function activateLoginButton() {
     e.preventDefault()
     document.querySelector("#popup").innerHTML = loginForm()
     activateLoginSubmit()
+    activateCloseLogin()
   })
 }
 
@@ -12,6 +13,14 @@ function activateLoginSubmit(){
     e.preventDefault()
     let data = collectLoginData()
     Auth.login(data)
+  })
+}
+
+function activateCloseLogin(){
+  document.querySelector('#close-modal').addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log('clicked')
+    document.querySelector('.modal').classList.remove('is-active')
   })
 }
 

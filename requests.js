@@ -27,6 +27,11 @@ window.Auth = {
     localStorage.setItem('admin', token.userInfo.admin)
   },
   getToken(){
-    return localStorage.getItem('token')
+    let token = localStorage.getItem('token')
+    return token
+  },
+  testValidation(token){
+    return axios.get(`${authURL}/auth/validate`, {headers: {authorization: token}})
+      .then(res => console.log(res.data))
   }
 }
