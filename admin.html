@@ -6,15 +6,13 @@
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <meta charset="utf-8">
       <script src="template/all_snacks.js"></script>
-      <script src="render/all_snacks.js"></script>
       <script src="template/one_snack.js"></script>
       <script src="template/adminAddSnackWindow.js"></script>
       <script src="render/one_snack.js"></script>
       <script src="requests.js"></script>
       <script src="main.js" defer></script>
-      <script defer src="admin.js">
-
-      </script>
+      <script defer src="admin.js"></script>
+      <script src="render/all_snacks.js"></script>
     <title>Admin Grumble</title>
   </head>
   <body>
@@ -42,44 +40,19 @@
         </div>
       </div>
     </section>
-    <section id="popup">
-<!--
-      <div class="modal is-active" id="addSnackWindow">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
-            <h1 class="modal-card-title">Add New Snack</h1>
-            <button class="button is-success is-pulled left" id="addSnackPost">Add Snack
-            </button>
-          </header>
-          <section class="modal-card-body">
-            <div class="control">
-              <form class="addSnack" action="" method="post">
-                Snack Name:<br>
-                <input type="text" name="name" placeholder="Snack Name">
-                <br>
-                Description:<br>
-                <textarea name="description" rows="8" cols="60" placeholder=""></textarea><br>
-                Price:<br>
-                <input type="number" name="price" value="" step="0.25"><br>
-                Sorce of img:<br>
-                <input type="text" name="img" value="">
+    <section>
+      <div class="container">
+        <div class="columns is-multiline" id="main-container">
 
-              </form>
-            </div>
-            <div class="">
-
-            </div>
-
-
-          </section>
-          <footer class="modal-card-foot">
-            <button class="delete" id="close-modal" aria-label="close"></button>
-          </footer>
+          <!-- snacks go in here -->
+          
         </div>
-      </div> -->
+      </div>
+    </section>
+    <section id="popup">
 
       <!-- individual pop up views go in here -->
+
     </section>
   </body>
 </html>
