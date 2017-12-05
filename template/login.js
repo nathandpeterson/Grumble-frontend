@@ -21,7 +21,8 @@ function loginForm(){
 
           <button id="login-submit"class="button is-warning is-pulled left">Log In</button>
           <br>
-          <button id="sign-up"class="button is-primary is-pulled left">Sign Up</button>
+          <button id="sign-up"class="button is-success is-pulled left">Sign Up</button>
+          <br>
 
           <button class="delete is-large" id="close-modal" aria-label="close"></button>
           </div>

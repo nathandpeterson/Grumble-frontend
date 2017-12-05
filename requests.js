@@ -17,6 +17,8 @@ window.Auth = {
     return axios.post(`${authURL}/auth/login`, data)
       .then(newToken => {
         this.setToken(newToken.data.token)
+        Login.success()
+        renderSnacks()
       })
       .catch(err => console.log(err))
   },
