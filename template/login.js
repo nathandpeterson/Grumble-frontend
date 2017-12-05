@@ -8,14 +8,14 @@ function loginForm(){
           <div class="field">
             <label class="label is-white">Email</label>
             <div class="control">
-              <input required id="email-input" class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+              <input required id="email-input" class="input" type="email" placeholder="e.g. frodo@hobbit.com">
             </div>
           </div>
 
           <div class="field">
           <label class="label is-white"></label>
             <div class="control">
-              <input required id="password-input" class="input" type="text" placeholder="password">
+              <input required id="password-input" class="input" type="password" placeholder="password">
             </div>
           </div>
 

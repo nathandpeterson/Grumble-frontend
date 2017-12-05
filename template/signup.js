@@ -3,7 +3,8 @@ function signUpForm(){
   <div class="modal is-active">
     <div class="modal-background"></div>
       <div class="modal-card">
-
+      <div id="error-message">
+      </div>
 
         <div class="field">
           <label class="label is-white">First Name</label>

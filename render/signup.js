@@ -27,7 +27,6 @@ class SignUp{
     if(!this.verifyPasswordMatch()){
       this.errorMessage(`Your passwords don't match`)
     }
-
   }
   static verifyPasswordMatch(){
     let input1 = document.querySelector('#password-input').value
@@ -35,6 +34,8 @@ class SignUp{
     return input1 === input2 ? true : false
   }
   static errorMessage(message){
-    alert(message)
+    document.querySelector('#error-message').innerHTML = `<div class="notification is-danger" id="error-notification">
+    ${message}
+    </div>`
   }
 }
