@@ -17,7 +17,16 @@ window.Auth = {
     return axios.post(`${authURL}/auth/login`, data)
       .then(newToken => {
         this.setToken(newToken.data.token)
+        Login.success()
+        renderSnacks()
       })
+      .catch(err => {
+        Login.errorMessage(err)
+      })
+  },
+  signUp(data){
+    return axios.post(`${authURL}/auth/signup`, data)
+      .then(res => console.log(res))
       .catch(err => console.log(err))
   },
   setToken(token){
@@ -27,7 +36,12 @@ window.Auth = {
     localStorage.setItem('admin', token.userInfo.admin)
   },
   getToken(){
-    return localStorage.getItem('token')
+    let token = localStorage.getItem('token')
+    return token
+  },
+  testValidation(token){
+    return axios.get(`${authURL}/auth/validate`, {headers: {authorization: token}})
+      .then(res => console.log(res.data))
   }
 }
 

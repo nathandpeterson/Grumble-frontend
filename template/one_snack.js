@@ -1,6 +1,6 @@
 function singleSnackTemplate(item, array){
 return `
-  <div class="modal is-active">
+  <div id="${item.id}" class="modal is-active">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
