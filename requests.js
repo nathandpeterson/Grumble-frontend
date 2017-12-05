@@ -20,6 +20,11 @@ window.Auth = {
       })
       .catch(err => console.log(err))
   },
+  signUp(data){
+    return axios.post(`${authURL}/auth/signup`, data)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  },
   setToken(token){
     localStorage.setItem('token', token.token)
     localStorage.setItem('userId', token.userInfo.id)

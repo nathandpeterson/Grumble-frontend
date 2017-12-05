@@ -5,7 +5,7 @@ function activateLoginButton() {
     document.querySelector("#popup").innerHTML = loginForm()
     activateLoginSubmit()
     activateCloseLogin()
-    activateSignUpButton()
+    SignUp.activateButtons()
   })
 }
 
@@ -21,14 +21,6 @@ function activateCloseLogin(){
   document.querySelector('#close-modal').addEventListener('click', (e) => {
     e.preventDefault()
     document.querySelector('.modal').classList.remove('is-active')
-  })
-}
-
-function activateSignUpButton(){
-  document.querySelector('#sign-up').addEventListener('click', (e) => {
-    e.preventDefault()
-    document.querySelector("#popup").innerHTML = signUpForm()
-    activateCloseLogin()
   })
 }
 
