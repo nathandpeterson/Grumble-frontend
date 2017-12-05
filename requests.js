@@ -44,3 +44,16 @@ window.Auth = {
       .then(res => console.log(res.data))
   }
 }
+
+window.Admin = {
+  postSnack(data){
+    console.log(data)
+    return axios.post(`${url}/snacks`, data )
+    .then(message=>{
+      return alert(`added Snack:${data.name}`)
+    })
+  },
+  delSnack(data){
+
+  }
+}
