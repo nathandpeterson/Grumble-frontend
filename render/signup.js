@@ -4,7 +4,7 @@ class SignUp{
     document.querySelector('#sign-up').addEventListener('click', (e) => {
       e.preventDefault()
       document.querySelector("#popup").innerHTML = signUpForm()
-      activateCloseLogin()
+      Login.activateCloseLogin()
       document.querySelector('#submit-sign-up-data').addEventListener('click', (e) => {
         e.preventDefault()
         this.submitForm()

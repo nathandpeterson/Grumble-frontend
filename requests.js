@@ -20,7 +20,9 @@ window.Auth = {
         Login.success()
         renderSnacks()
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        Login.errorMessage(err)
+      })
   },
   signUp(data){
     return axios.post(`${authURL}/auth/signup`, data)
