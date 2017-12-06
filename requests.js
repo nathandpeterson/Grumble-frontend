@@ -16,11 +16,6 @@ window.Auth = {
   login(data){
     return axios.post(`${authURL}/auth/login`, data)
       .then(newToken => {
-<<<<<<< HEAD
-        console.log(newToken);
-=======
-
->>>>>>> 4cfd89673e82c451403dff4ea5b88890d8d9ca33
         this.setToken(newToken.data.token)
         Login.success()
         renderSnacks()

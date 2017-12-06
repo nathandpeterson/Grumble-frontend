@@ -1,0 +1,8 @@
+.has-review {
+  border: 2px solid lightgreen;
+}
+
+.has-review::before {
+  content: "Your review:";
+  color: green
+}
