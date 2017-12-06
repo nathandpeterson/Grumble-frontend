@@ -12,7 +12,7 @@ function renderOneSnack(id) {
     (event) => {
       if(event.target.id === "addReview"){
         const user = Token.check()
-        console.log(user.userId);
+        document.querySelector('#popup').innerHTML = reviewForm(user.userId);
       };
     })
   })

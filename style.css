@@ -6,3 +6,12 @@
   content: "Your review:";
   color: green
 }
+
+.label,
+.modal {
+  color: #efefef
+}
+
+#text {
+  min-height: 280px; 
+}
