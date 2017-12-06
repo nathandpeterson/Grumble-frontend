@@ -1,10 +1,7 @@
 function viewActiveUsers(data){
   //console.log(data)
-
-
-
   let code = data.map(data=>{
-    console.log(data)
+    //console.log(data)
     return `<tr>
           <td>${data.id}</td>
           <td>${data.first_name}</td>
