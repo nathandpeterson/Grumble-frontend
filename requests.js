@@ -52,13 +52,21 @@ window.Auth = {
 
 window.Admin = {
   postSnack(data){
-    console.log(data)
+    //console.log(data)
     return axios.post(`${url}/snacks`, data )
     .then(message=>{
       return alert(`added Snack:${data.name}`)
     })
   },
   delSnack(data){
+
+  },
+  getUsers(){
+    return axios.get(`${authURL}/users/`).then(data=>{
+      return data
+    })
+  },
+  renderUsers(data){
 
   }
 }
