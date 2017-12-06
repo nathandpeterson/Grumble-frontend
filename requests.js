@@ -16,6 +16,7 @@ window.Auth = {
   login(data){
     return axios.post(`${authURL}/auth/login`, data)
       .then(newToken => {
+
         this.setToken(newToken.data.token)
         Login.success()
         renderSnacks()
