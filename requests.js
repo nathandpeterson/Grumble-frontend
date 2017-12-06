@@ -16,6 +16,7 @@ window.Auth = {
   login(data){
     return axios.post(`${authURL}/auth/login`, data)
       .then(newToken => {
+
         this.setToken(newToken.data.token)
         Login.success()
         renderSnacks()
@@ -26,7 +27,11 @@ window.Auth = {
   },
   signUp(data){
     return axios.post(`${authURL}/auth/signup`, data)
-      .then(res => console.log(res))
+      .then(res => {
+        SignUp.success(res.data)
+        window.setTimeout(render, 500)
+        window.setTimeout(SignUp.closeModal, 1000)
+      })
       .catch(err => console.log(err))
   },
   setToken(token){

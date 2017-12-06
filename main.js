@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   Token.setButtonText()
 })
 
-
-
   // const id = element.id.replace('more', '')
 class Token{
   constructor(){
@@ -21,12 +19,15 @@ class Token{
     let data = this.check()
     if(data.token) {
       let logoutButton = document.querySelector('#login')
-      logoutButton.innerHTML = 'Log out'
+      logoutButton.innerHTML = `${data.name}Log out`
       logoutButton.addEventListener('click', (e) => {
         e.preventDefault()
-        console.log('clicked')
         Login.logout()
       })
     }
   }
+}
+
+function render(){
+  Login.activateLoginButton()
 }
