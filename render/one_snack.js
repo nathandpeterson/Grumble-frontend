@@ -8,7 +8,12 @@ function renderOneSnack(id) {
       document.querySelector('#close-modal').addEventListener('click', () => {
         document.querySelector('.modal').classList.remove('is-active')
       })
-    //   document.querySelector('#btn-review').addEventListener('click',
-    // () => {console.log("add review");})
+      document.querySelector('.action-btn').addEventListener('click',
+    (event) => {
+      if(event.target.id === "addReview"){
+        const user = Token.check()
+        console.log(user.userId);
+      };
     })
+  })
 }
