@@ -40,7 +40,6 @@ class SignUp{
     </div>`
   }
   static success(data){
-    console.log(data)
     document.querySelector('#error-message').innerHTML = `<div class="notification is-primary" id="error-notification">
     New account successfully created. Please log in to add reviews.
     </div>`
