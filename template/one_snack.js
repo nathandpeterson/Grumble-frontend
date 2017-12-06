@@ -5,7 +5,7 @@ return `
     <div class="modal-card">
       <header class="modal-card-head">
         <h1 class="modal-card-title">${item.name}</h1>
-          <button class="button is-warning is-pulled left">Add review</button>
+        ${isLoggedIn()}
       </header>
       <section class="modal-card-body">
         <div class="columns">
@@ -50,4 +50,12 @@ return `
     </article>
   </div>
 `
+}
+
+function isLoggedIn(){
+  const user = Token.check();
+  console.log(user)
+  if (!user.token) return `<span>Login or sign up to post a review</span>`
+  else return
+  `<button class="button is-danger is-pulled left" id="btn-review">Add Review</button>`
 }
