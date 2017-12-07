@@ -7,11 +7,11 @@
   color: green
 }
 
-.label,
-.modal {
+.reviews .radio,
+.reviews .label {
   color: #efefef
 }
 
 #text {
-  min-height: 280px; 
+  min-height: 280px;
 }

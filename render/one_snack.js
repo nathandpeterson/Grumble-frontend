@@ -12,8 +12,24 @@ function renderOneSnack(id) {
     (event) => {
       if(event.target.id === "addReview"){
         const user = Token.check()
-        document.querySelector('#popup').innerHTML = reviewForm(user.userId);
-      };
+        const snack_id = event.target.parentElement.parentElement.parentElement.id
+        document.querySelector('#popup').innerHTML = reviewForm(snack_id);
+      }
+      activateReviewSubmit(document.querySelector('.review-submit'))
     })
+  })
+}
+
+function activateReviewSubmit(button){
+  button.addEventListener('click', (event) => {
+    event.preventDefault()
+    const title = document.querySelector('#title').value
+    const text = document.querySelector('#text').value
+    const user = Token.check()
+    const user_id = user.userId
+    const snack_id = event.target.id
+    const rating = document.querySelector('#rating').value
+    console.log({title, text, user_id, snack_id, rating});
+    Reviews.create({title, text, user_id, snack_id, rating})
   })
 }

@@ -52,7 +52,7 @@ window.Auth = {
 window.Admin = {
   postSnack(data){
     let token = window.Auth.getToken()
-    
+
     return axios.post(`${url}/snacks` , data,
       {headers: { Authorization : token}})
     .then(message=>{
@@ -69,5 +69,11 @@ window.Admin = {
   },
   renderUsers(data){
 
+  }
+}
+
+window.Reviews = {
+  create(data){
+    return axios.post(`${url}/reviews`)
   }
 }
