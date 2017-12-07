@@ -1,6 +1,7 @@
 let addSnack = document.querySelector("#addSnackButton")
 let newSnackWindow = document.querySelector("#popup")
 let userTable = document.querySelector('#userTable')
+let delSnack = document.querySelector('#delSnackButton')
 //on page load
 
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -41,3 +42,5 @@ addSnack.addEventListener('click', function(){
 
   })
 })
+
+delSnack.addEventListener('click')
