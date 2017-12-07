@@ -8,5 +8,12 @@ function renderOneSnack(id) {
       document.querySelector('#close-modal').addEventListener('click', () => {
         document.querySelector('.modal').classList.remove('is-active')
       })
+      document.querySelector('.action-btn').addEventListener('click',
+    (event) => {
+      if(event.target.id === "addReview"){
+        const user = Token.check()
+        document.querySelector('#popup').innerHTML = reviewForm(user.userId);
+      };
     })
+  })
 }
