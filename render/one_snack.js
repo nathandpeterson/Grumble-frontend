@@ -15,7 +15,7 @@ function renderOneSnack(id) {
       if(event.target.id === "addReview"){
         const user = Token.check()
         document.querySelector('#popup').innerHTML = reviewForm(user.userId);
-      };
+      }
     })
   })
 }

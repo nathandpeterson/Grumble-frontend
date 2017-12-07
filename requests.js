@@ -52,7 +52,6 @@ window.Auth = {
 window.Admin = {
   postSnack(data){
     let token = window.Auth.getToken()
-    console.log('we have a token-->', token)
     return axios.post(`${url}/snacks` , data,
       {headers: { Authorization : token}})
     .then(message=>{
