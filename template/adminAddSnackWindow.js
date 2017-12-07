@@ -8,7 +8,7 @@ return `
           <button id="addSnackPost" class="button is-success is-pulled left">Add Snack</button>
       </header>
       <section class="modal-card-body">
-      
+
       <form class="addSnack">
         Snack Name:<br>
         <input id="snackName" type="text" name="name" placeholder="Snack Name">

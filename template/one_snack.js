@@ -5,7 +5,7 @@ return `
     <div class="modal-card">
       <header class="modal-card-head">
         <h1 class="modal-card-title">${item.name}</h1>
-          <button class="button is-warning is-pulled left">Add review</button>
+        ${isLoggedIn(item.id, array)}
       </header>
       <section class="modal-card-body">
         <div class="columns">
@@ -36,7 +36,7 @@ function addReviews(array){
 
 function oneReview(item){
 return `
-  <div class="box">
+  ${alreadyReviewed(item.user_id)}
     <article class="media">
       <div class="media-content" id="${item.user_id}">
         <strong class='is-pulled-right'>Rating: ${item.rating}</strong>
@@ -52,3 +52,48 @@ return `
   </div>
 `
 }
+
+function isLoggedIn(snack_id, array){
+  const user = Token.check()
+  //check if the user is logged in
+  if (user.token === "" || !user.token) return `<span>Login or sign up to post a review</span>`
+  //check if user has reviewed the item
+    else  {
+      let btnContent = 'Add review'
+      let btnId  = `addReview`
+      array.forEach(el => {
+        if (el.user_id == user.userId) {
+          btnContent = 'Edit Review'
+          btnId = `editReview`
+        }
+      })
+    return `<button class="button is-danger is-pulled left action-btn" id=${btnId}>${btnContent}</button>`
+  }
+}
+
+function alreadyReviewed(id){
+  const user = Token.check()
+  if (user.userId == id){
+    return `<div class="box has-review" id="id">`
+  }
+  return `<div class="box">`
+}
+
+
+// function isLoggedIn(snack_id, array){
+//   const user = Token.check()
+//   //check if the user is logged in
+//   if (user.token === "" || !user.token) return `<span>Login or sign up to post a review</span>`
+//   //check if user has reviewed the item
+//     else  {
+//       let btnContent = 'Add review'
+//       let btnId  = `addReview-${user.userId}`
+//       array.forEach(el => {
+//         if (el.user_id == user.userId) {
+//           btnContent = 'Edit Review'
+//           btnId = `editReview-${user.userId}`
+//         }
+//       })
+//     return `<button class="button is-danger is-pulled left action-btn" id=${btnId}>${btnContent}</button>`
+//   }
+// }
