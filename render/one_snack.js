@@ -1,8 +1,10 @@
 function renderOneSnack(id) {
   return RequestSnacks.oneWithReviews(id)
-    .then(response => {
-      const snack = response[0].data
-      const reviewsArray = response[1].data
+    .then(snackAndReviews => {
+      const snack = snackAndReviews[0].data
+      console.log(snack)
+
+      const reviewsArray = snackAndReviews[1].data
       const content = singleSnackTemplate(snack, reviewsArray)
       document.querySelector("#popup").innerHTML = content
       document.querySelector('#close-modal').addEventListener('click', () => {

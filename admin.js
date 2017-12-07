@@ -19,6 +19,5 @@ addSnack.addEventListener('click', function(){
     let img = thisSnack.img.value
     window.Admin.postSnack({name, description, price, img})
     document.querySelector('.modal').classList.remove('is-active')
-
   })
 })

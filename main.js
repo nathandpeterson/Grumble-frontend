@@ -19,7 +19,7 @@ class Token{
     let data = this.check()
     if(data.token) {
       let logoutButton = document.querySelector('#login')
-      logoutButton.innerHTML = `${data.name} <br> Logout`
+      logoutButton.innerHTML = `${data.name} <br> Log out`
       logoutButton.addEventListener('click', (e) => {
         e.preventDefault()
         Login.logout()
