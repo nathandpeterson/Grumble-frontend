@@ -27,6 +27,7 @@ addSnack.addEventListener('click', function(){
     img: document.querySelector("#imgURL")
   }
   let post = document.querySelector("#addSnackPost")
+
 //sends a post request to add new snack on add snack click
 
   post.addEventListener('click', function(){
