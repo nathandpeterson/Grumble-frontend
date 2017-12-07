@@ -1,4 +1,5 @@
 function snackTemplate(item){
+
 return `
     <div class="column is-3">
       <div class="card">
@@ -18,6 +19,7 @@ return `
         </div>
         <footer class="card-footer">
           <a href="#" class="card-footer-item  more" id="more${item.id}">More</a>
+          <br>
         </footer>
       </div>
     </div>

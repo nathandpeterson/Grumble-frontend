@@ -1,13 +1,13 @@
-function reviewForm(user_id){
+function reviewForm(snack_id){
       return`
-      <div class="modal is-active">
+      <div class="modal is-active reviews">
         <div class="modal-background"></div>
           <div class="modal-card">
           <div id="error-message">
           </div>
           <div class="field">
           <div class="control">
-          <label class="label">Rating</label>
+          <label class="label" id="rating">Rating</label>
             <label class="radio">
               <input type="radio" name="question">
               1
@@ -43,7 +43,7 @@ function reviewForm(user_id){
             </div>
           </div>
 
-            <button id="login-submit"class="button is-info">Submit</button>
+            <button id="${snack_id}"class="button is-info review-submit">Submit</button>
             <button class="delete is-large" id="close-modal" aria-label="close"></button>
           </div>
         </div>
