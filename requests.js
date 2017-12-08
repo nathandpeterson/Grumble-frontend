@@ -21,8 +21,9 @@ window.SnackReviews = {
   },
   update(data){
     let token = Token.check()
-    return axios.put(`${url}/reviews`, data, {headers: { Authorization : token.token}})
-      .then(response => console.log(response))
+    console.log(data)
+    // return axios.put(`${url}/reviews`, data, {headers: { Authorization : token.token}})
+    //   .then(response => console.log(response))
       //needs a success or failure message to appear to the user
   }
 }
