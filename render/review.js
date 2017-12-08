@@ -25,6 +25,25 @@ const Review = {
     if(!data.text) return this.errorMessage(`You must enter some text.`)
     return true
   },
+  updateForm(review){
+    review = review[0]
+    document.querySelector('#popup').innerHTML = reviewForm(review.user_id)
+    document.querySelector('#title').value = review.title
+    document.querySelector('#text').value = review.text
+    let buttons = document.querySelectorAll('.radio-input')
+    buttons[review.rating-1].checked = true
+    this.activateUpdate(review.user_id)
+  },
+  activateUpdate(id){
+    document.querySelector('#close-modal').addEventListener('click', () => {
+      document.querySelector('.modal').classList.remove('is-active')
+    })
+    document.querySelector('#review-submit').addEventListener('click', () => {
+      const reviewData = this.collectFormData(id)
+      SnackReviews.update(reviewData)
+      //Needs success or failure message. Use the same logic as errorMessage
+    })
+  },
   errorMessage(error){
     // Needs error handling visible to the user.
     console.log(error)

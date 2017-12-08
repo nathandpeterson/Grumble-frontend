@@ -14,7 +14,16 @@ function renderOneSnack(id) {
         const user = Token.check()
         document.querySelector('#popup').innerHTML = reviewForm(user.userId)
         Review.activateButtons(id)
-        
+      }
+      if(event.target.id === "editReview"){
+        const user = Token.check()
+        let userReview = reviewsArray.filter(review => review.user_id == user.userId)
+        Review.updateForm(userReview)
+        // RequestSnacks.oneWithReviews(id)
+        // .then(snacksAndReviews => {
+        //   let review = snackAndReviews[]
+
+        // document.querySelector('#popup').innerHTML = reviewForm(user.userId)
       }
     })
   })

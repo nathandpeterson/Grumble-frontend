@@ -15,9 +15,15 @@ window.RequestSnacks = {
 window.SnackReviews = {
   post(data){
     let token = Token.check()
-    console.log(token)
     return axios.post(`${url}/reviews`, data, {headers: { Authorization : token.token}})
       .then(response => console.log(response))
+      //needs a success or failure message to appear to the user
+  },
+  update(data){
+    let token = Token.check()
+    return axios.put(`${url}/reviews`, data, {headers: { Authorization : token.token}})
+      .then(response => console.log(response))
+      //needs a success or failure message to appear to the user
   }
 }
 
