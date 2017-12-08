@@ -1,8 +1,6 @@
 
 function reviewForm(snack_id){
       return ` <div class="modal is-active reviews">
-function reviewForm(user_id){
-      return `
       <div class="modal is-active">
         <div class="modal-background"></div>
           <div class="modal-card">
