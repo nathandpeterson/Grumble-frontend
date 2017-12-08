@@ -28,6 +28,7 @@ const Review = {
   },
   updateForm(review){
     review = review[0]
+
     document.querySelector('#popup').innerHTML = reviewForm(review.user_id)
     document.querySelector('#title').value = review.title
     document.querySelector('#text').value = review.text
