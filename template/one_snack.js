@@ -18,7 +18,8 @@ return `
             ${item.description}
           </div>
         </div>
-        <div class="reviews">${addReviews(array)}</div>
+        <div class="reviews">
+        ${addReviews(array)}</div>
       </section>
       <footer class="modal-card-foot">
         <button class="delete" id="close-modal" aria-label="close"></button>

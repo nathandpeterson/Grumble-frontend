@@ -44,7 +44,6 @@ addSnack.addEventListener('click', function(){
 
     window.Admin.postSnack({name, description, price, img})
     document.querySelector('.modal').classList.remove('is-active')
-
   })
 })
 
