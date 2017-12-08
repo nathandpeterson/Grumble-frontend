@@ -17,14 +17,14 @@ window.SnackReviews = {
     let token = Token.check()
     return axios.post(`${url}/reviews`, data, {headers: { Authorization : token.token}})
       .then(response => console.log(response))
-      //needs a success or failure message to appear to the user
+      document.querySelector('.modal').classList.remove('is-active')
   },
   update(data){
     let token = Token.check()
-    console.log(data)
-    // return axios.put(`${url}/reviews`, data, {headers: { Authorization : token.token}})
-    //   .then(response => console.log(response))
-      //needs a success or failure message to appear to the user
+    return axios.put(`${url}/reviews/${data.snack_id}`, data, {headers: { Authorization : token.token}})
+      .then(response => {
+        document.querySelector('.modal').classList.remove('is-active')
+      })
   }
 }
 
