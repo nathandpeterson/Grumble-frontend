@@ -1,12 +1,9 @@
-<<<<<<< HEAD
+
 function reviewForm(snack_id){
-      return`
-      <div class="modal is-active reviews">
-=======
+      return ` <div class="modal is-active reviews">
 function reviewForm(user_id){
       return `
       <div class="modal is-active">
->>>>>>> debc5ad96ac7371429da5991fbb3a338ca2487a9
         <div class="modal-background"></div>
           <div class="modal-card">
           <div id="error-message">
@@ -16,25 +13,6 @@ function reviewForm(user_id){
           <div class="control">
           <label class="label" id="rating">Rating</label>
             <label class="radio">
-<<<<<<< HEAD
-              <input type="radio" name="question" class="rating" value="1">
-              1
-            </label>
-            <label class="radio">
-              <input type="radio" name="question" class="rating" value="2">
-              2
-            </label>
-            <label class="radio">
-              <input type="radio" name="question" class="rating" value="3" checked>
-              3
-            </label>
-            <label class="radio">
-              <input type="radio" name="question" class="rating" value="4">
-              4
-            </label>
-            <label class="radio">
-              <input type="radio" name="question" class="rating" value="5">
-=======
               <input class="radio-input" type="radio" name="question">
               1
             </label>
@@ -52,7 +30,6 @@ function reviewForm(user_id){
             </label>
             <label class="radio">
               <input class="radio-input" type="radio" name="question">
->>>>>>> debc5ad96ac7371429da5991fbb3a338ca2487a9
               5
             </label>
           </div>
@@ -70,11 +47,7 @@ function reviewForm(user_id){
             </div>
           </div>
 
-<<<<<<< HEAD
-            <button id="${snack_id}"class="button is-info review-submit">Submit</button>
-=======
             <button id="review-submit"class="button is-info">Submit</button>
->>>>>>> debc5ad96ac7371429da5991fbb3a338ca2487a9
             <button class="delete is-large" id="close-modal" aria-label="close"></button>
           </div>
 
