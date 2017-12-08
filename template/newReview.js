@@ -1,3 +1,6 @@
+
+function reviewForm(snack_id){
+      return ` <div class="modal is-active reviews">
 function reviewForm(user_id){
       return `
       <div class="modal is-active">
@@ -5,9 +8,10 @@ function reviewForm(user_id){
           <div class="modal-card">
           <div id="error-message">
           </div>
+          <form class="review">
           <div class="field">
           <div class="control">
-          <label class="label">Rating</label>
+          <label class="label" id="rating">Rating</label>
             <label class="radio">
               <input class="radio-input" type="radio" name="question">
               1
@@ -46,6 +50,8 @@ function reviewForm(user_id){
             <button id="review-submit"class="button is-info">Submit</button>
             <button class="delete is-large" id="close-modal" aria-label="close"></button>
           </div>
+
+          </form>
         </div>
       </div>`
 }

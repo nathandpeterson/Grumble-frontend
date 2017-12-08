@@ -78,22 +78,3 @@ function alreadyReviewed(id){
   }
   return `<div class="box">`
 }
-
-
-// function isLoggedIn(snack_id, array){
-//   const user = Token.check()
-//   //check if the user is logged in
-//   if (user.token === "" || !user.token) return `<span>Login or sign up to post a review</span>`
-//   //check if user has reviewed the item
-//     else  {
-//       let btnContent = 'Add review'
-//       let btnId  = `addReview-${user.userId}`
-//       array.forEach(el => {
-//         if (el.user_id == user.userId) {
-//           btnContent = 'Edit Review'
-//           btnId = `editReview-${user.userId}`
-//         }
-//       })
-//     return `<button class="button is-danger is-pulled left action-btn" id=${btnId}>${btnContent}</button>`
-//   }
-// }
