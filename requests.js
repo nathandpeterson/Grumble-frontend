@@ -16,18 +16,20 @@ window.SnackReviews = {
   post(data){
     let token = Token.check()
     return axios.post(`${url}/reviews`, data, {headers: { Authorization : token.token}})
-      .then(response => console.log(response))
-      document.querySelector('.modal').classList.remove('is-active')
+      .then(response => {
+        Review.success()
+        window.setTimeout(Review.close, 1000)
+      })
   },
   update(data){
     let token = Token.check()
     return axios.put(`${url}/reviews/${data.snack_id}`, data, {headers: { Authorization : token.token}})
       .then(response => {
-        document.querySelector('.modal').classList.remove('is-active')
+        Review.success()
+        window.setTimeout(Review.close, 1000)
       })
   }
 }
-
 
 window.Auth = {
   login(data){
@@ -48,7 +50,9 @@ window.Auth = {
         window.setTimeout(render, 500)
         window.setTimeout(SignUp.closeModal, 1000)
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        SignUp.errorMessage('That email has been taken')
+      })
   },
   setToken(token){
     localStorage.setItem('token', token.token)
