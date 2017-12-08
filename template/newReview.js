@@ -1,5 +1,5 @@
 function reviewForm(user_id){
-      return`
+      return `
       <div class="modal is-active">
         <div class="modal-background"></div>
           <div class="modal-card">
@@ -9,23 +9,23 @@ function reviewForm(user_id){
           <div class="control">
           <label class="label">Rating</label>
             <label class="radio">
-              <input type="radio" name="question">
+              <input class="radio-input" type="radio" name="question">
               1
             </label>
             <label class="radio">
-              <input type="radio" name="question">
+              <input class="radio-input" type="radio" name="question">
               2
             </label>
             <label class="radio">
-              <input type="radio" name="question">
+              <input class="radio-input" type="radio" name="question">
               3
             </label>
             <label class="radio">
-              <input type="radio" name="question">
+              <input class="radio-input" type="radio" name="question">
               4
             </label>
             <label class="radio">
-              <input type="radio" name="question">
+              <input class="radio-input" type="radio" name="question">
               5
             </label>
           </div>
@@ -43,7 +43,7 @@ function reviewForm(user_id){
             </div>
           </div>
 
-            <button id="login-submit"class="button is-info">Submit</button>
+            <button id="review-submit"class="button is-info">Submit</button>
             <button class="delete is-large" id="close-modal" aria-label="close"></button>
           </div>
         </div>

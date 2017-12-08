@@ -2,8 +2,6 @@ function renderOneSnack(id) {
   return RequestSnacks.oneWithReviews(id)
     .then(snackAndReviews => {
       const snack = snackAndReviews[0].data
-      console.log(snack)
-
       const reviewsArray = snackAndReviews[1].data
       const content = singleSnackTemplate(snack, reviewsArray)
       document.querySelector("#popup").innerHTML = content
@@ -14,7 +12,9 @@ function renderOneSnack(id) {
     (event) => {
       if(event.target.id === "addReview"){
         const user = Token.check()
-        document.querySelector('#popup').innerHTML = reviewForm(user.userId);
+        document.querySelector('#popup').innerHTML = reviewForm(user.userId)
+        Review.activateButtons(id)
+        
       }
     })
   })

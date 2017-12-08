@@ -12,6 +12,16 @@ window.RequestSnacks = {
   }
 }
 
+window.SnackReviews = {
+  post(data){
+    let token = Token.check()
+    console.log(token)
+    return axios.post(`${url}/reviews`, data, {headers: { Authorization : token.token}})
+      .then(response => console.log(response))
+  }
+}
+
+
 window.Auth = {
   login(data){
     return axios.post(`${authURL}/auth/login`, data)
