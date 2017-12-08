@@ -67,6 +67,10 @@ window.Admin = {
       return data
     })
   },
+  delUserWreviews(id){
+    let token = Auth.getToken()
+    return axios.delete(`${authURL}/users/${id}`, {headers: { Authorization: token}})
+  },
   renderUsers(data){
 
   }
