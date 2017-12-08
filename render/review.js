@@ -1,13 +1,15 @@
 const Review = {
-  collectFormData(snackID){
+  collectFormData(snackID, review=null){
     let buttonValues = document.querySelectorAll('.radio-input')
     let rating = Array.from(buttonValues).map((button,index) => {
       if(button.checked) return index + 1 }).filter(el => el)
     let data = { title: document.querySelector('#title').value,
                 text : document.querySelector('#text').value,
-                rating: rating[0],
-                snack_id: snackID }
-    return this.validateReview(data) ? data : null
+                rating: rating[0]}
+      snackID ? data.snack_id = snackID : null
+      review ? data.id = review.id : null
+    if(this.validateReview(data)) return data
+    return false
   },
   activateButtons(id){
     document.querySelector('#close-modal').addEventListener('click', () => {
@@ -15,8 +17,7 @@ const Review = {
     })
     document.querySelector('#review-submit').addEventListener('click', () => {
       const reviewData = this.collectFormData(id)
-      SnackReviews.post(reviewData)
-      //Needs success or failure message. Use the same logic as errorMessage
+      return reviewData ? SnackReviews.post(reviewData) : null
     })
   },
   validateReview(data){
@@ -33,20 +34,20 @@ const Review = {
     document.querySelector('#text').value = review.text
     let buttons = document.querySelectorAll('.radio-input')
     buttons[review.rating-1].checked = true
-    this.activateUpdate(review.user_id)
+    this.activateUpdate(review)
   },
-  activateUpdate(id){
+  activateUpdate(review){
     document.querySelector('#close-modal').addEventListener('click', () => {
       document.querySelector('.modal').classList.remove('is-active')
     })
     document.querySelector('#review-submit').addEventListener('click', () => {
-      const reviewData = this.collectFormData(id)
-      SnackReviews.update(reviewData)
-      //Needs success or failure message. Use the same logic as errorMessage
+      const reviewData = this.collectFormData(review.snack_id, review)
+      reviewData ? SnackReviews.update(reviewData) : null
     })
   },
-  errorMessage(error){
-    // Needs error handling visible to the user.
-    console.log(error)
+  errorMessage(message){
+    document.querySelector('#error-message').innerHTML = `<div class="notification is-danger" id="error-notification">
+    ${message}
+    </div>`
   }
 }
