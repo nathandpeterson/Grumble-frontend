@@ -15,6 +15,7 @@ function renderOneSnack(id) {
         const user = Token.check()
         document.querySelector('#popup').innerHTML = reviewForm(user.userId)
         Review.activateButtons(id)
+        document.querySelector('#delete-review').style.display = 'none'
       }
       if(event.target.id === "editReview"){
         const user = Token.check()

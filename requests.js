@@ -28,6 +28,15 @@ window.SnackReviews = {
         Review.success()
         window.setTimeout(Review.close, 1000)
       })
+  },
+  delete(review){
+    let token = Token.check()
+    return axios.delete(`${url}/reviews/${review.id}`, {headers: { Authorization : token.token}})
+      .then(response => {
+        console.log(response)
+        Review.success()
+        window.setTimeout(Review.close, 1000)
+      })
   }
 }
 

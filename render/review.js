@@ -39,9 +39,14 @@ const Review = {
     document.querySelector('#close-modal').addEventListener('click', () => {
       this.close()
     })
-    document.querySelector('#review-submit').addEventListener('click', () => {
+    document.querySelector('#review-submit').addEventListener('click', (e) => {
+      e.preventDefault()
       const reviewData = this.collectFormData(review.snack_id, review)
       reviewData ? SnackReviews.update(reviewData) : null
+    })
+    document.querySelector('#delete-review').addEventListener('click', (e) => {
+      e.preventDefault()
+      SnackReviews.delete(review)
     })
   },
   errorMessage(message){
