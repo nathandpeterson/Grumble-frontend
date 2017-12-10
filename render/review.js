@@ -13,7 +13,7 @@ const Review = {
   },
   activateButtons(id){
     document.querySelector('#close-modal').addEventListener('click', () => {
-      document.querySelector('.modal').classList.remove('is-active')
+      this.close()
     })
     document.querySelector('#review-submit').addEventListener('click', () => {
       const reviewData = this.collectFormData(id)
@@ -38,16 +38,29 @@ const Review = {
   },
   activateUpdate(review){
     document.querySelector('#close-modal').addEventListener('click', () => {
-      document.querySelector('.modal').classList.remove('is-active')
+      this.close()
     })
-    document.querySelector('#review-submit').addEventListener('click', () => {
+    document.querySelector('#review-submit').addEventListener('click', (e) => {
+      e.preventDefault()
       const reviewData = this.collectFormData(review.snack_id, review)
       reviewData ? SnackReviews.update(reviewData) : null
+    })
+    document.querySelector('#delete-review').addEventListener('click', (e) => {
+      e.preventDefault()
+      SnackReviews.delete(review)
     })
   },
   errorMessage(message){
     document.querySelector('#error-message').innerHTML = `<div class="notification is-danger" id="error-notification">
     ${message}
     </div>`
+  },
+  success(){
+    document.querySelector('#error-message').innerHTML = `<div class="notification is-success" id="error-notification">
+    Success!
+    </div>`
+  },
+  close(){
+    document.querySelector('.modal').classList.remove('is-active')
   }
 }
