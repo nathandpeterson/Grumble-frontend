@@ -80,7 +80,8 @@ window.Admin = {
 
   },
   getUsers(){
-    return axios.get(`${authURL}/users/`).then(data=>{
+    let token = window.Auth.getToken()
+    return axios.get(`${authURL}/users/`,{headers: { Authorization : token}}).then(data=>{
       return data
     })
   },
