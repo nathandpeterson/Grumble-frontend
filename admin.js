@@ -47,6 +47,8 @@ addSnack.addEventListener('click', function(){
   })
 })
 
-delSnack.addEventListener('click', ()=>{
+//brings up all snacks view for editing
 
+document.querySelector('#editSnackButton').addEventListener('click', () => {
+  adminRenderSnacks()
 })
