@@ -47,16 +47,11 @@ window.Auth = {
         this.setToken(newToken.data.token)
         Login.success()
         renderSnacks()
-        this.renderAdmin()
-
       })
       .catch(err => {
         Login.errorMessage(err)
       })
-  },
-  renderAdmin(){
-    let admin = localStorage.getItem('admin')
-    if(admin==true) location.assign('admin.html')
+
   },
   signUp(data){
     return axios.post(`${authURL}/auth/signup`, data)

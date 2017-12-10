@@ -44,11 +44,6 @@ const Login = {
       this.logout()
     })
   },
-  renderIfAdmin(){
-    let admin = localStorage.getItem('admin')
-    console.log(admin)
-    if(admin==true)return location.assign('admin.html')
-  },
   logout() {
     localStorage.setItem('token', '')
     localStorage.setItem('userId', '')
