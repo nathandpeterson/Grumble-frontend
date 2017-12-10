@@ -46,7 +46,13 @@ function reviewForm(snack_id){
           </div>
 
             <button id="review-submit"class="button is-info">Submit</button>
+            <button id="delete-review"class="button is-danger">Delete</button>
             <button class="delete is-large" id="close-modal" aria-label="close"></button>
+
+          </div>
+          </div>
+
+
           </div>
 
           </form>
