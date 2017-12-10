@@ -1,21 +1,24 @@
-const url = 'http://localhost:3000/api'
-const authURL = 'http://localhost:3000'
+// const url = 'http://localhost:3000/api'
+// const authURL = 'http://localhost:3000'
+const herokuURL = 'https://grumble-api.herokuapp.com/api'
+const herokuAuth = 'https://grumble-api.herokuapp.com'
+
 window.RequestSnacks = {
   all(){
-    return axios.get(`${url}/snacks`)
+    return axios.get(`${herokuURL}/snacks`)
   },
   one(id){
-    return axios.get(`${url}/snacks/${id}`)
+    return axios.get(`${herokuURL}/snacks/${id}`)
   },
   oneWithReviews(id){
-    return axios.all([axios.get(`${url}/snacks/${id}`), axios.get(`${url}/snacks/${id}/reviews`)])
+    return axios.all([axios.get(`${herokuURL}/snacks/${id}`), axios.get(`${herokuURL}/snacks/${id}/reviews`)])
   }
 }
 
 window.SnackReviews = {
   post(data){
     let token = Token.check()
-    return axios.post(`${url}/reviews`, data, {headers: { Authorization : token.token}})
+    return axios.post(`${herokuURL}/reviews`, data, {headers: { Authorization : token.token}})
       .then(response => {
         Review.success()
         window.setTimeout(Review.close, 1000)
@@ -23,7 +26,7 @@ window.SnackReviews = {
   },
   update(data){
     let token = Token.check()
-    return axios.put(`${url}/reviews/${data.snack_id}`, data, {headers: { Authorization : token.token}})
+    return axios.put(`${herokuURL}/reviews/${data.snack_id}`, data, {headers: { Authorization : token.token}})
       .then(response => {
         Review.success()
         window.setTimeout(Review.close, 1000)
@@ -31,9 +34,8 @@ window.SnackReviews = {
   },
   delete(review){
     let token = Token.check()
-    return axios.delete(`${url}/reviews/${review.id}`, {headers: { Authorization : token.token}})
+    return axios.delete(`${herokuURL}/reviews/${review.id}`, {headers: { Authorization : token.token}})
       .then(response => {
-        console.log(response)
         Review.success()
         window.setTimeout(Review.close, 1000)
       })
@@ -42,7 +44,7 @@ window.SnackReviews = {
 
 window.Auth = {
   login(data){
-    return axios.post(`${authURL}/auth/login`, data)
+    return axios.post(`${herokuAuth}/auth/login`, data)
       .then(newToken => {
         this.setToken(newToken.data.token)
         Login.success()
@@ -53,7 +55,7 @@ window.Auth = {
       })
   },
   signUp(data){
-    return axios.post(`${authURL}/auth/signup`, data)
+    return axios.post(`${herokuAuth}/auth/signup`, data)
       .then(res => {
         SignUp.success(res.data)
         window.setTimeout(render, 500)
@@ -74,7 +76,7 @@ window.Auth = {
     return token
   },
   testValidation(token){
-    return axios.get(`${authURL}/auth/validate`, {headers: {authorization: token}})
+    return axios.get(`${herokuAuth}/auth/validate`, {headers: {authorization: token}})
       .then(res => console.log(res.data))
   }
 }
@@ -83,7 +85,7 @@ window.Admin = {
   postSnack(data){
     let token = window.Auth.getToken()
 
-    return axios.post(`${url}/snacks` , data,
+    return axios.post(`${herokuURL}/snacks` , data,
       {headers: { Authorization : token}})
     .then(message=>{
       return alert(`added Snack:${data.name}`)
@@ -93,13 +95,13 @@ window.Admin = {
 
   },
   getUsers(){
-    return axios.get(`${authURL}/users/`).then(data=>{
+    return axios.get(`${herokuAuth}/users/`).then(data=>{
       return data
     })
   },
   delUserWreviews(id){
     let token = Auth.getToken()
-    return axios.delete(`${authURL}/users/${id}`, {headers: { Authorization: token}})
+    return axios.delete(`${herokuAuth}/users/${id}`, {headers: { Authorization: token}})
   },
   renderUsers(data){
 
@@ -108,6 +110,6 @@ window.Admin = {
 
 window.Reviews = {
   create(data){
-    return axios.post(`${url}/reviews`)
+    return axios.post(`${herokuURL}/reviews`)
   }
 }
