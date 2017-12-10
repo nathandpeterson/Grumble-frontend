@@ -43,6 +43,7 @@ const Login = {
       e.preventDefault()
       this.logout()
     })
+    checkIfAdmin()
   },
   logout() {
     localStorage.setItem('token', '')
