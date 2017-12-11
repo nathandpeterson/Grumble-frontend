@@ -49,11 +49,15 @@ window.Auth = {
         this.setToken(newToken.data.token)
         Login.success()
         renderSnacks()
+
       })
       .catch(err => {
         Login.errorMessage(err)
       })
-
+  },
+  renderAdmin(){
+    let admin = localStorage.getItem('admin')
+    if(admin==true) location.assign('admin.html')
   },
   signUp(data){
     return axios.post(`${herokuAuth}/auth/signup`, data)
@@ -97,8 +101,9 @@ window.Admin = {
     return axios.put(`${herokuURL}/snacks/${snack.id}`, snack, {headers: { Authorization : token}})
   },
   delSnack(snackID){
-    return axios.delete(`${herokuURL}/snacks/${snackID}`).then(message=>{
-      return alert(`Deleted Snack`)
+    let token = window.Auth.getToken()
+    return axios.delete(`${herokuURL}/snacks/${snackID}`, {headers: { Authorization : token}}).then(message=>{
+    return alert(`Deleted Snack`)
     })
   },
   getUsers(){

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       button.addEventListener('click', ()=>{
         console.log(button.value)
         window.Admin.delUserWreviews(button.value)
+        location.reload(true)
       })
     }
     })
@@ -52,3 +53,21 @@ addSnack.addEventListener('click', function(){
 document.querySelector('#editSnackButton').addEventListener('click', () => {
   adminRenderSnacks()
 })
+
+//fills login form and makes it log out
+
+if(localStorage.getItem('admin')=='true'){
+  let logoutButton = document.querySelector('#login')
+  logoutButton.innerHTML='Welcome Gandalf The Gray<br>Click Here to Logout'
+}
+
+let logoutButton = document.querySelector('#login')
+
+logoutButton.addEventListener('click', (e) => {
+      e.preventDefault()
+      localStorage.setItem('token', '')
+      localStorage.setItem('userId', '')
+      localStorage.setItem('userName', '')
+      localStorage.setItem('admin', '')
+      location='index.html'
+  })
