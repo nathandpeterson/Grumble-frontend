@@ -47,11 +47,15 @@ window.Auth = {
         this.setToken(newToken.data.token)
         Login.success()
         renderSnacks()
+
       })
       .catch(err => {
         Login.errorMessage(err)
       })
-
+  },
+  renderAdmin(){
+    let admin = localStorage.getItem('admin')
+    if(admin==true) location.assign('admin.html')
   },
   signUp(data){
     return axios.post(`${authURL}/auth/signup`, data)
@@ -95,7 +99,8 @@ window.Admin = {
     return axios.put(`${url}/snacks/${snack.id}`, snack, {headers: { Authorization : token}})
   },
   delSnack(snackID){
-    return axios.delete(`${url}/snacks/${snackID}`).then(message=>{
+    let token = window.Auth.getToken()
+    return axios.delete(`${url}/snacks/${snackID}`,{headers: { Authorization : token}}).then(message=>{
       return alert(`Deleted Snack`)
     })
   },

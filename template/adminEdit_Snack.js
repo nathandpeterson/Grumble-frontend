@@ -29,6 +29,7 @@ return `
             <input class="input" id="price" type="text" placeholder="${item.price}">
           </div>
         </div>
+          <button id="editSnack" class="button is-warning is-pulled-right" value="${item.id}">Edit Snack</button>
       </section>
       <footer class="modal-card-foot">
         <button class="delete" id="close-modal" aria-label="close"></button>

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       button.addEventListener('click', ()=>{
         console.log(button.value)
         window.Admin.delUserWreviews(button.value)
+        location.reload(true)
       })
     }
     })
