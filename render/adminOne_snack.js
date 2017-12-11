@@ -9,9 +9,10 @@ function adminRenderOneSnack(id) {
           id:snack.data.id,
           name:document.querySelector('#title').value,
           description:document.querySelector('#text').value,
-          price:document.querySelector('#price').value
+          price:document.querySelector('#price').value,
+          img:document.querySelector('#snackURL').value
         }
-        console.log(thisNewSnack);
+        //console.log(thisNewSnack);
         Admin.editSnack(thisNewSnack)
       })
 
