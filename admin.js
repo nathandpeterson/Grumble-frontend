@@ -46,3 +46,9 @@ addSnack.addEventListener('click', function(){
     document.querySelector('.modal').classList.remove('is-active')
   })
 })
+
+//brings up all snacks view for editing
+
+document.querySelector('#editSnackButton').addEventListener('click', () => {
+  adminRenderSnacks()
+})

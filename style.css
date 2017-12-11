@@ -15,3 +15,8 @@
 #text {
   min-height: 280px;
 }
+
+.hero .title {
+  font-family: 'Permanent Marker';
+  font-size: 3rem;
+}
