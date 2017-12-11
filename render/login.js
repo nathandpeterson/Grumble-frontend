@@ -42,6 +42,7 @@ const Login = {
     logoutButton.addEventListener('click', (e) => {
       e.preventDefault()
       this.logout()
+      location.assign('index.html')
     })
     checkIfAdmin()
   },
@@ -55,6 +56,7 @@ const Login = {
     logInButton.style.padding = ''
     document.querySelector('.modal').classList.remove('is-active')
     this.activateLoginButton()
+
   },
   errorMessage() {
     document.querySelector('#error-message').innerHTML = `<div class="notification is-danger" id="error-notification">
