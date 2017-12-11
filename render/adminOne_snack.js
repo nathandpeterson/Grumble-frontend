@@ -17,6 +17,7 @@ function adminRenderOneSnack(id) {
 
       document.querySelector('#close-modal').addEventListener('click', () => {
         document.querySelector('.modal').classList.remove('is-active')
+        adminRenderSnacks()
       })
 
   })

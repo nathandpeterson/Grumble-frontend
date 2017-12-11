@@ -69,6 +69,5 @@ logoutButton.addEventListener('click', (e) => {
       localStorage.setItem('userId', '')
       localStorage.setItem('userName', '')
       localStorage.setItem('admin', '')
-      //console.log(location)
       location='index.html'
   })
