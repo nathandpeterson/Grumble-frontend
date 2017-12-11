@@ -10,7 +10,7 @@ function adminRenderOneSnack(id) {
           name:document.querySelector('#title').value,
           description:document.querySelector('#text').value,
           price:document.querySelector('#price').value,
-          img:document.querySelector('#snackURL').value
+          //img:document.querySelector('#snackURL').value||"https://i2.wp.com/linda-hoang.com/wp-content/uploads/2014/11/img-placeholder-dark.jpg"
         }
         //console.log(thisNewSnack);
         Admin.editSnack(thisNewSnack)

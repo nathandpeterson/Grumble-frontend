@@ -31,13 +31,6 @@ return `
           </div>
         </div>
 
-        <div class="field">
-          <label for="img_URL" class= "label">img Url</label>
-          <div class="control">
-            <input class="input" id="snackURL"  placeholder="http://" type="text">
-          </div>
-        </div>
-
         </section>
       </form>
         <footer class="modal-card-foot">
