@@ -1,4 +1,5 @@
 function singleSnackTemplate(item, array){
+  if(isNaN(item.averageRating)) item.averageRating = 5.00
 return `
   <div id="${item.id}" class="modal is-active">
     <div class="modal-background"></div>
@@ -12,6 +13,7 @@ return `
           <div class="column">
             <div class="card-image">
               <img src=${item.img} alt="snack image">
+              <h4> Average Rating: ${item.averageRating} / 5.00</h4>
             </div>
           </div>
           <div class="column">

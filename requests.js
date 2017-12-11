@@ -94,16 +94,16 @@ window.Admin = {
   },
   editSnack(snack){
     let token = window.Auth.getToken()
-    return axios.put(`${url}/snacks/${snack.id}`, snack, {headers: { Authorization : token}})
+    return axios.put(`${herokuURL}/snacks/${snack.id}`, snack, {headers: { Authorization : token}})
   },
   delSnack(snackID){
-    return axios.delete(`${url}/snacks/${snackID}`).then(message=>{
+    return axios.delete(`${herokuURL}/snacks/${snackID}`).then(message=>{
       return alert(`Deleted Snack`)
     })
   },
   getUsers(){
     let token = window.Auth.getToken()
-    return axios.get(`${authURL}/users/`,{headers: { Authorization : token}}).then(data=>{
+    return axios.get(`${herokuAuth}/users/`,{headers: { Authorization : token}}).then(data=>{
       return data
     })
   },
