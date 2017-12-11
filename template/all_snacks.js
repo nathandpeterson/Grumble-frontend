@@ -1,5 +1,5 @@
 function snackTemplate(item){
-
+  if(isNaN(item.averageRating) || item.averageRating === null) item.averageRating = 5.00
 return `
     <div class="column is-3">
       <div class="card">
@@ -14,7 +14,7 @@ return `
         </header>
         <div class="card-content">
           <div class="content">
-            $${item.price}
+            $${item.price} <br> Rating: ${item.averageRating} / 5.00
           </div>
         </div>
         <footer class="card-footer">
