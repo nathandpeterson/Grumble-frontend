@@ -53,6 +53,7 @@ window.Auth = {
       .catch(err => {
         Login.errorMessage(err)
       })
+
   },
   signUp(data){
     return axios.post(`${herokuAuth}/auth/signup`, data)
@@ -88,14 +89,21 @@ window.Admin = {
     return axios.post(`${herokuURL}/snacks` , data,
       {headers: { Authorization : token}})
     .then(message=>{
-      return alert(`added Snack:${data.name}`)
+      return alert(`Added Snack:${data.name}`)
     })
   },
-  delSnack(data){
-
+  editSnack(snack){
+    let token = window.Auth.getToken()
+    return axios.put(`${url}/snacks/${snack.id}`, snack, {headers: { Authorization : token}})
+  },
+  delSnack(snackID){
+    return axios.delete(`${url}/snacks/${snackID}`).then(message=>{
+      return alert(`Deleted Snack`)
+    })
   },
   getUsers(){
-    return axios.get(`${herokuAuth}/users/`).then(data=>{
+    let token = window.Auth.getToken()
+    return axios.get(`${authURL}/users/`,{headers: { Authorization : token}}).then(data=>{
       return data
     })
   },

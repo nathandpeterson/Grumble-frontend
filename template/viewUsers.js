@@ -7,7 +7,7 @@ function viewActiveUsers(data){
           <td>${data.first_name}</td>
           <td>${data.last_name}</td>
           <td>${data.email}</td>
-          <td><button class="button is-link delUserButton" value="${data.id}"type="button" >Delete</button></td>
+          <td><button class="delete delUserButton" value="${data.id}"type="button" >Delete</button></td>
         </tr>`
   })
   return code.join('')

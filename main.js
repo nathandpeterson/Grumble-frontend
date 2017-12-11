@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Token.setButtonText()
 })
 
+
   // const id = element.id.replace('more', '')
 class Token{
   constructor(){
